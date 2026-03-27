@@ -181,7 +181,7 @@ footer{margin-top:2rem;color:var(--muted);text-align:center}
 }
 
 .gallery.open {
-  max-height: 800px; /* Expands to fit content */
+  max-height: 2500px; /* Increased to fit stacked images on mobile */
   opacity: 1;
   margin-top: 1rem;
 }

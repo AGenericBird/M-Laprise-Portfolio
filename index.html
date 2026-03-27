@@ -103,19 +103,6 @@
           </div>
   </section>
 
-  <section>
-    <div class="work-gallery">
-      <button id="toggleGallery1" class="btn" aria-expanded="false">Show project screenshots</button>
-        <div id="galleryArea1" class="gallery hidden" aria-hidden="true" style="margin-top:0.8rem;">
-          <a href="Documents/Images/erd remake lawfirm.drawio.png" target="_blank" rel="noopener">
-            <img src="Documents/Images/erd remake lawfirm.drawio.png" alt="PostgreSQL solo adventure" class="thumb" />Reverse Engineered ERD
-          </a>
-          <a href="Documents/Images/zammad - public.png" target="_blank" rel="noopener">
-            <img src="Documents/Images/zammad - public.png" alt="PostgreSQL solo adventure" class="thumb" />Ticketing System ERD
-          </a>
-        </div>
-    </div>
-  </section>
 
   <section id="work" class="section card">
     <h2>Work Samples & Downloads</h2>
@@ -135,24 +122,29 @@
 
 
 
-  <section>
+ <section>
     <div class="work-gallery">
       <button id="toggleGallery2" class="btn" aria-expanded="false">Show Work Sample screenshots</button>
-        <div id="galleryArea2" class="gallery hidden" aria-hidden="true" style="margin-top:0.8rem;">
+        <div id="galleryArea2" class="gallery" aria-hidden="true">
           <a href="Documents/Images/PostgreSQL_solo adventure.png" target="_blank" rel="noopener">
-            <img src="Documents/Images/PostgreSQL_solo adventure.png" alt="PostgreSQL solo adventure" class="thumb" />PostgreSQL Solo Aventure
+            <img src="Documents/Images/PostgreSQL_solo adventure.png" alt="PostgreSQL solo adventure" class="thumb" />
+            <span class="img-caption">PostgreSQL Adventure</span>
           </a>
           <a href="Documents/Images/PostgreSQL_solo adventure_2.png" target="_blank" rel="noopener">
             <img src="Documents/Images/PostgreSQL_solo adventure_2.png" alt="PostgreSQL solo adventure photo 2" class="thumb" />
+            <span class="img-caption">PostgreSQL Part 2</span>
           </a>
           <a href="Documents/Images/ITX PC build.jpg" target="_blank" rel="noopener">
-            <img src="Documents/Images/ITX PC build.jpg" alt="ITX PC Build" class="thumb" />ITX Pc Build
+            <img src="Documents/Images/ITX PC build.jpg" alt="ITX PC Build" class="thumb" />
+            <span class="img-caption">ITX PC Build</span>
           </a>
           <a href="Documents/Images/Mini-ITX pc build.jpg" target="_blank" rel="noopener">
-            <img src="Documents/Images/Mini-ITX pc build.jpg" alt="Mini-ITX PC Build" class="thumb" />Mini-ITX Pc Build
+            <img src="Documents/Images/Mini-ITX pc build.jpg" alt="Mini-ITX PC Build" class="thumb" />
+            <span class="img-caption">Mini-ITX Build</span>
           </a>
           <a href="Documents/Images/Ikea Program.png" target="_blank" rel="noopener">
-            <img src="Documents/Images/Ikea Program.png" alt="Ikea Programming Project" class="thumb" />Ikea Programming Project
+            <img src="Documents/Images/Ikea Program.png" alt="Ikea Programming Project" class="thumb" />
+            <span class="img-caption">IKEA Project</span>
           </a>
         </div>
     </div>
@@ -216,20 +208,26 @@
       setTimeout(()=> status.textContent = 'Template form only', 4000);
     }
 
-function setupGallery(toggleId, galleryId){
+function setupGallery(toggleId, galleryId, defaultText, activeText) {
   const btn = document.getElementById(toggleId);
   const gallery = document.getElementById(galleryId);
 
   btn.addEventListener('click', () => {
-    const hidden = gallery.classList.toggle('hidden');
-    gallery.style.display = hidden ? 'none' : 'flex';
-    btn.setAttribute('aria-expanded', !hidden);
-    gallery.setAttribute('aria-hidden', hidden);
+    // Toggle the 'open' class for the CSS animation
+    const isOpen = gallery.classList.toggle('open');
+    
+    // Update accessibility attributes
+    btn.setAttribute('aria-expanded', isOpen);
+    gallery.setAttribute('aria-hidden', !isOpen);
+    
+    // Swap the button text dynamically
+    btn.textContent = isOpen ? activeText : defaultText;
   });
 }
 
-setupGallery("toggleGallery1", "galleryArea1");
-setupGallery("toggleGallery2", "galleryArea2");
+// Pass in what the buttons should say when closed vs. open
+setupGallery("toggleGallery1", "galleryArea1", "Show project screenshots", "Hide project screenshots");
+setupGallery("toggleGallery2", "galleryArea2", "Show work sample screenshots", "Hide work sample screenshots");
 
 
   </script>

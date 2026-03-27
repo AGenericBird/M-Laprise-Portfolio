@@ -1,5 +1,5 @@
 :root {
-  --bg: #cdf7f6; /* Soft off-white background */
+  --bg: #c3e6e5; /* Soft off-white background */
   --card: #FFFFFF; /* Pure white for cards */
   --text: #334155; /* Dark slate for readable main text */
   --muted: #64748b; /* Medium slate for muted text */
@@ -167,20 +167,57 @@ footer{margin-top:2rem;color:var(--muted);text-align:center}
 
 /* Gallery */
 .hidden { display: none !important; }
-.gallery { display:flex; gap:0.6rem; flex-wrap:wrap; }
-.thumb { width:160px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); }
-.gallery img {
-  width: 100%;
-  max-width: 400px;   /* actual thumbnail size */
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
+/* Gallery Animation & Layout */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: flex-start;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out, margin-top 0.4s ease-out;
+}
+
+.gallery.open {
+  max-height: 800px; /* Expands to fit content */
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Individual Image Cards */
+.gallery a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 208, 255, 0.4); /* Uses your new muted blue */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 220px; /* Standardizes the width */
+}
+
+.gallery a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(148, 208, 255, 0.2);
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px; /* Forces uniform height */
+  object-fit: cover; /* Crops images beautifully without stretching them */
+  border-bottom: 1px solid rgba(148, 208, 255, 0.2);
+}
+
+.img-caption {
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-align: center;
+  font-weight: 500;
 }
 
 

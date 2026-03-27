@@ -207,14 +207,17 @@
 
 
   
-  <script>
+ <script>
+    // Set the current year in the footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Resume Download
     function downloadResume(){
       const url = 'Documents/Resume - Michael Laprise.pdf'; 
       window.open(url, '_blank');
     }
 
+    // Contact Form Demo
     function handleContact(e){
       e.preventDefault();
       const name = document.getElementById('name').value;
@@ -223,28 +226,25 @@
       setTimeout(()=> status.textContent = 'Template form only', 4000);
     }
 
-function setupGallery(toggleId, galleryId, defaultText, activeText) {
-  const btn = document.getElementById(toggleId);
-  const gallery = document.getElementById(galleryId);
+    // Smooth Gallery Toggle
+    function setupGallery(toggleId, galleryId, defaultText, activeText) {
+      const btn = document.getElementById(toggleId);
+      const gallery = document.getElementById(galleryId);
 
-  btn.addEventListener('click', () => {
-    // Toggle the 'open' class for the CSS animation
-    const isOpen = gallery.classList.toggle('open');
-    
-    // Update accessibility attributes
-    btn.setAttribute('aria-expanded', isOpen);
-    gallery.setAttribute('aria-hidden', !isOpen);
-    
-    // Swap the button text dynamically
-    btn.textContent = isOpen ? activeText : defaultText;
-  });
-}
+      // Safety check to ensure the IDs exist before trying to add clicks
+      if (!btn || !gallery) return;
 
-// Pass in what the buttons should say when closed vs. open
-setupGallery("toggleGallery1", "galleryArea1", "Show project screenshots", "Hide project screenshots");
-setupGallery("toggleGallery2", "galleryArea2", "Show work sample screenshots", "Hide work sample screenshots");
+      btn.addEventListener('click', () => {
+        const isOpen = gallery.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+        gallery.setAttribute('aria-hidden', !isOpen);
+        btn.textContent = isOpen ? activeText : defaultText;
+      });
+    }
 
-
+    // Initialize both galleries
+    setupGallery("toggleGallery1", "galleryArea1", "Show project screenshots", "Hide project screenshots");
+    setupGallery("toggleGallery2", "galleryArea2", "Show work sample screenshots", "Hide work sample screenshots");
   </script>
 </body>
 </html>

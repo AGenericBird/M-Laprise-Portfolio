@@ -56,57 +56,129 @@
 
       <div class="card">
         <h1 class="subtitle">Database Administrator in training.</h1>
-        <p class="subtitle">I am forever fascinated by the impact data has on our day to day lives and wish to combine my 
+        <p class="subtitle">I am forever fMySQLascinated by the impact data has on our day to day lives and wish to combine my 
           various computing skills into one core identity, which is how I stumbled upon Database Administration.
         </p>
         
       </div>
     </section>
 
+    <!-- 1. Overview of the project. Goal/problem
+    2. Tasks/Specific things you did
+    3. Skills used (if not evident from the tasks) Tags
+    4. Result/impact/takeaway -->
 
 
 <main>
+
+  <section id="skills" class="section card">
+    <h2>Skills & Proficiencies</h2>
+    <p class="muted">A breakdown of my technical toolkit, mapped to the projects where I applied them.</p>
+      
+    <div class="skills-table">
+      <div class="skill-row header">
+        <div>Skill</div>
+        <div>Proficiency</div>
+        <div>Evidence</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">PostgreSQL</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-evidence"><a href="#ticketing-project">Ticketing System Project</a></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Linux Administration (CentOS)</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-evidence"><a href="#backup-project">Automated Database Backups</a></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Power BI & DAX</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-evidence"><a href="#capstone-project">Workforce CRM Dashboard</a></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">BASH Scripting</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-evidence"><a href="#backup-project">Automated Database Backups</a></div>
+      </div>
+    </div>
+  </section>
+
   <section id="projects" class="section card">
           <h2>Projects</h2>
-          <p class="muted">My recent projects related to Database Administration that encompass various aspects of the field.</p>
-          <div class="projects-grid">
-            <article class="project">
-              <h3>Restoring and Reverse engineering a database</h3>
-              <p class="muted"> While working on an assignment, I took the liberty to further my understanding 
-                of the restoration and subsequently the backing-up process within PGAdmin, which required 
-                translating a MySQL backup file of a lawfirm database into PostgreSQL.
-              </p>
-              <p class="muted">Following the restoration process, I proceeded to perform some reverse engineering 
-               , as part of my assignment, which meant contructing an ERD based on the final database schema.
-              </p>
-              <div class="tags"><span class="tag">PGAdmin</span><span class="tag">MySQL</span><span class="tag">Reverse Engineering</span><span class="tag">PostgreSQL</span></div>
+          <p class="muted">Detailed case studies of my database administration work.</p>
+          
+          <div class="projects-list">
+            
+            <article class="project-detail" id="ticketing-project">
+              <h3>Ticketing System Implementation</h3>
+              <div class="project-grid">
+                <div class="project-section">
+                  <h4>Overview / Problem</h4>
+                  <p>Tasked with researching, selecting, and implementing a ticketing system that aligned with specific business and stakeholder requirements.</p>
+                </div>
+                <div class="project-section">
+                  <h4>Result / Impact</h4>
+                  <p>Successfully deployed a PostgreSQL-backed system on an Ubuntu Hyper-V environment, establishing a reliable foundation for user support.</p>
+                </div>
+                <div class="project-section full-width">
+                  <h4>Specific Tasks Executed</h4>
+                  <ul>
+                    <li>Acted as Team Lead and sole DBA, coordinating with System Administrators.</li>
+                    <li>Performed business analysis to map software capabilities to stakeholder needs.</li>
+                    <li>Deployed and configured PostgreSQL using DBeaver for database management.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Ubuntu</span><span class="tag">DBeaver</span><span class="tag">Team Lead</span></div>
             </article>
 
-            <article class="project">
-              <h3>Capstone Project - Workforce Development Team CRM</h3>
-              <p class="muted"> The NSCC Workforce Development Team had a lot of issues that needed to be resolved with their in house made
-                CRM that is hosted in Microsoft SharePoint. We were tasked as a team to implement required and optional additions to the page
-              </p>
-              <p class="muted">Throughout the project, I learned the fundamentals of SharePoint, such as lists, flows, 
-              how to duplicate existing pages, import/export data. Additionally the fundamentals of PowerBi its companion applications
-              such as PowerQuery and the DAX programming language.  
-              </p>
-              <div class="tags"><span class="tag">SharePoint</span><span class="tag">DAX</span><span class="tag">PowerBi</span><span class="tag">PowerQuery</span><span class="tag">Teamwork</span></div>
+            <article class="project-detail" id="capstone-project">
+              <h3>Workforce Development CRM & Dashboards</h3>
+              <div class="project-grid">
+                <div class="project-section">
+                  <h4>Overview / Problem</h4>
+                  <p>The NSCC Workforce Development Team faced severe usability and reporting issues with their in-house Microsoft SharePoint CRM.</p>
+                </div>
+                <div class="project-section">
+                  <h4>Result / Impact</h4>
+                  <p>Revamped the data pipelines and reporting capabilities, allowing the team to cleanly import/export data and generate actionable Power BI dashboards.</p>
+                </div>
+                <div class="project-section full-width">
+                  <h4>Specific Tasks Executed</h4>
+                  <ul>
+                    <li>Reconstructed SharePoint lists and automated data flows.</li>
+                    <li>Developed complex data models using Power Query to clean historical data.</li>
+                    <li>Wrote DAX programming logic to power interactive Power BI visualizations.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">PowerQuery</span><span class="tag">SharePoint</span></div>
             </article>
 
-
-            <article class="project">
-              <h3>Ticketing System Project</h3>
-              <p class="muted">As the sole DBA and voted upon team lead, my team of System Administrator and I 
-                were tasked with researching, selecting, and implementing a Ticketing
-                System with that was in line with the business and stakeholder requirements set fourth by the project.
-              </p>
-              <p class="muted">This required good team coordination and communication, while
-                dealing with independant decision making when at a crossroad on the project.
-              </p>
-              <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Ubuntu</span><span class="tag">DBeaver</span><span class="tag">Business Analysis</span>
-              <span class="tag">Hyper-V</span><span class="tag">Teamwork</span><span class="tag">Leading</span><span class="tag">Communication</span></div>
+            <article class="project-detail" id="backup-project">
+              <h3>Automated CentOS Database Backups</h3>
+              <div class="project-grid">
+                <div class="project-section">
+                  <h4>Overview / Problem</h4>
+                  <p>Needed a reliable, hands-off disaster recovery solution to protect a database hosted on a CentOS 9 server.</p>
+                </div>
+                <div class="project-section">
+                  <h4>Result / Impact</h4>
+                  <p>Implemented a zero-touch backup infrastructure ensuring high data availability and rapid recovery capabilities in the event of hardware failure.</p>
+                </div>
+                <div class="project-section full-width">
+                  <h4>Specific Tasks Executed</h4>
+                  <ul>
+                    <li>Developed custom BASH scripts to automate the archival process.</li>
+                    <li>Utilized rsync over SSH for secure, efficient delta transfers of database dumps.</li>
+                    <li>Configured cron jobs to schedule regular, unattended backup intervals.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tags"><span class="tag">CentOS 9</span><span class="tag">BASH</span><span class="tag">rsync</span><span class="tag">Disaster Recovery</span></div>
             </article>
+
           </div>
   </section>
 
@@ -175,37 +247,6 @@
         </div>
     </div>
   </section>
-
-
-
-  <section id="skills" class="section card">
-    <h2>Skills</h2>
-    <p class="muted">Here is an ever growing list of skills that I have picked up from my years 
-      of schooling and working</p>
-      <div class="skills">
-        <div class="skill">SQL Server</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">Oracle SQL</div>
-        <div class="skill">Microsoft Server</div>
-        <div class="skill">PGAdmin</div>
-        <div class="skill">DBeaver</div>
-        <div class="skill">CLI Database</div>
-        <div class="skill">Backup & Recovery</div>
-        <div class="skill">Performance Tuning</div>
-        <div class="skill">Query Optimization</div>
-        <div class="skill">Linux Administration</div>
-        <div class="skill">Shell & PowerShell Scripting</div>
-        <div class="skill">Teamwork</div>
-        <div class="skill">Leadership</div>
-        <div class="skill">Communication in English and French</div>
-        <div class="skill">Customer Support</div>
-        <div class="skill">Tinkering</div>
-        <div class="skill">Quick Thinking</div>
-    </div>
-  </section>
-
-
-
 
       <section id="contact" class="section card">
         <h2>Contact</h2>

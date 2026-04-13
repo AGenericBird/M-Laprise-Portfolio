@@ -200,6 +200,7 @@ footer{margin-top:2rem;color:var(--muted);text-align:center}
   width: 220px; /* Standardizes the width */
 }
 
+
 .gallery a:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(148, 208, 255, 0.2);
@@ -276,4 +277,47 @@ footer{margin-top:2rem;color:var(--muted);text-align:center}
 @media (min-width: 768px) {
   .project-grid { grid-template-columns: 1fr 1fr; }
   .project-section.full-width { grid-column: 1 / -1; }
+}
+/* About Me Section Layout */
+.about-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 0.5rem;
+}
+
+.about-text p {
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hobby Tags */
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-content: flex-start;
+}
+
+.tag.hobby {
+  background: rgba(148, 208, 255, 0.15); /* Uses your muted bright blue */
+  border: 1px solid rgba(148, 208, 255, 0.5);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Desktop layout for About section */
+@media (min-width: 768px) {
+  .about-grid { 
+    grid-template-columns: 2fr 1fr; 
+    align-items: center; 
+  }
 }
